@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUXORA ATELIER — Handcrafted Leather Lighting (London & New York)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-bg: #FBF9F5;
+      --color-surface: #FFFFFF;
+      --color-dark: #141312;
+      --color-dark-soft: #211F1D;
+      --color-leather-primary: #8B5A2B;
+      --color-leather-dark: #5C3A1E;
+      --color-leather-cognac: #A76D38;
+      --color-gold: #C5A059;
+      --color-gold-hover: #AF8A44;
+      --color-gold-light: #F4EEDB;
+      --color-muted: #736E67;
+      --color-border: #E8E2D9;
+      --font-heading: "Cormorant Garamond", Georgia, serif;
+      --font-body: "Plus Jakarta Sans", sans-serif;
+      --transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-body); background: var(--color-bg); color: var(--color-dark); line-height: 1.6; }
+    h1, h2, h3, h4, .font-serif { font-family: var(--font-heading); font-weight: 500; color: var(--color-dark); }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 1320px; margin: 0 auto; padding: 0 2rem; }
+    .eyebrow { display: inline-block; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-gold); font-weight: 600; margin-bottom: 0.75rem; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.75rem; padding: 1rem 2.25rem; font-size: 0.82rem; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600; border-radius: 3px; cursor: pointer; border: 1px solid transparent; transition: var(--transition); }
+    .btn--primary { background: var(--color-dark); color: #FFF; border-color: var(--color-dark); }
+    .btn--primary:hover { background: var(--color-leather-primary); border-color: var(--color-leather-primary); }
+    .btn--gold { background: var(--color-gold); color: #141312; border-color: var(--color-gold); font-weight: 700; }
+    .btn--gold:hover { background: var(--color-gold-hover); }
+    .btn--outline-gold { background: transparent; color: var(--color-gold); border-color: var(--color-gold); }
+    .btn--outline-gold:hover { background: var(--color-gold); color: #141312; }
+    .badge-gold { background: rgba(197, 160, 89, 0.95); color: #141312; font-size: 0.7rem; font-weight: 700; padding: 0.35rem 0.75rem; border-radius: 2px; text-transform: uppercase; letter-spacing: 0.1em; }
+    .badge-leather { background: rgba(139, 90, 43, 0.9); color: #FFF; font-size: 0.7rem; padding: 0.35rem 0.75rem; border-radius: 2px; text-transform: uppercase; letter-spacing: 0.1em; }
+    
+    /* Announcement */
+    .announcement { background: #11100F; color: #E5E1DA; font-size: 0.78rem; border-bottom: 1px solid #282420; padding: 0.65rem 0; }
+    .announcement .container { display: flex; justify-content: space-between; align-items: center; }
+    
+    /* Header */
+    .header { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--color-border); }
+    .header .container { display: flex; justify-content: space-between; align-items: center; height: 86px; }
+    .nav { display: flex; gap: 2.25rem; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 500; }
+    .nav a:hover { color: var(--color-gold); }
+    .logo { text-align: center; }
+    .logo-title { font-family: var(--font-heading); font-size: 2rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 500; line-height: 1; }
+    .logo-sub { font-size: 0.62rem; letter-spacing: 0.32em; text-transform: uppercase; color: var(--color-gold); margin-top: 0.25rem; display: block; }
+    
+    /* Hero */
+    .hero { background: radial-gradient(circle at 70% 30%, #2E251D 0%, #121110 75%); color: #FFF; padding: 6.5rem 0 7.5rem; position: relative; overflow: hidden; }
+    .hero-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: center; }
+    .hero-title { font-size: clamp(2.5rem, 5vw, 4.2rem); color: #FFF; line-height: 1.15; margin-bottom: 1.5rem; }
+    .hero-desc { color: #C8BFB3; font-size: 1.15rem; line-height: 1.8; margin-bottom: 2.5rem; }
+    .hero-card { background: radial-gradient(circle, #382E23 0%, #1A1714 80%); border: 1px solid rgba(197,160,89,0.3); border-radius: 8px; padding: 3rem 2rem; text-align: center; box-shadow: 0 30px 60px rgba(0,0,0,0.5); }
+    
+    /* Value Props */
+    .value-props { background: #FAF7F2; border-bottom: 1px solid var(--color-border); padding: 3rem 0; }
+    .value-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2rem; }
+    
+    /* Lamp Cards */
+    .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3.5rem; }
+    .card { background: #FFF; border: 1px solid var(--color-border); border-radius: 4px; overflow: hidden; transition: var(--transition); display: flex; flex-direction: column; }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); border-color: var(--color-gold); }
+    .card-media { position: relative; aspect-ratio: 4/5; background: radial-gradient(circle, #332B23 0%, #181614 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; color: #FFF; padding: 2rem; text-align: center; }
+    .card-badges { position: absolute; top: 1rem; left: 1rem; display: flex; flex-direction: column; gap: 0.5rem; }
+    .card-content { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
+    .card-title { font-size: 1.35rem; margin-bottom: 0.35rem; }
+    .card-subtitle { font-size: 0.85rem; color: var(--color-muted); margin-bottom: 1.25rem; }
+    .card-footer { margin-top: auto; border-top: 1px solid var(--color-border); padding-top: 1rem; }
+    
+    /* Cart Drawer */
+    .cart-drawer { position: fixed; top: 0; right: 0; width: 440px; height: 100vh; background: #FFF; box-shadow: -10px 0 40px rgba(0,0,0,0.25); z-index: 1000; transform: translateX(100%); transition: transform 0.4s ease; display: flex; flex-direction: column; }
+    .cart-drawer.active { transform: translateX(0); }
+    .cart-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,0.5); backdrop-filter: blur(4px); z-index: 999; display: none; }
+    .cart-backdrop.active { display: block; }
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="announcement">
+    <div class="container">
+      <div>✈ Complimentary Insured Express Delivery across the UK & USA on all orders</div>
+      <div style="color: var(--color-gold); font-weight: 600;">🇬🇧 UK (GBP £) | 🇺🇸 USA (USD $)</div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <nav class="nav">
+        <a href="#collection">Desk Lamps</a>
+        <a href="#collection">Table Lamps</a>
+        <a href="#collection">Floor Lamps</a>
+        <a href="#story">Craftsmanship</a>
+      </nav>
+
+      <div class="logo">
+        <span class="logo-title">LUXORA</span>
+        <span class="logo-sub">Atelier • London & New York</span>
+      </div>
+
+      <div style="display: flex; gap: 1.25rem; align-items: center;">
+        <button onclick="toggleCart()" class="btn btn--primary" style="padding: 0.65rem 1.25rem; font-size: 0.75rem;">
+          Shopping Bag (1)
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <span class="eyebrow">The Art of Handcrafted Illumination</span>
+          <h1 class="hero-title">Sculpted Saddle Leather & Architectural Warmth</h1>
+          <p class="hero-desc">
+            Individually hand-burnished Florentine calfskin, solid aged brass, and precision dimmable lighting. Bespoke pieces engineered for the world's most distinguished interiors across London, New York, and worldwide.
+          </p>
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="#collection" class="btn btn--gold">Explore The Collection &rarr;</a>
+            <a href="#story" class="btn btn--outline-gold">The Leather Atelier Story</a>
+          </div>
+          <div style="display: flex; gap: 2.5rem; margin-top: 3.5rem; border-top: 1px solid rgba(255,255,255,0.15); padding-top: 1.5rem;">
+            <div>
+              <strong style="display: block; font-family: var(--font-heading); font-size: 1.8rem;">100%</strong>
+              <span style="font-size: 0.75rem; color: #A0998E; text-transform: uppercase;">Full-Grain Leather</span>
+            </div>
+            <div>
+              <strong style="display: block; font-family: var(--font-heading); font-size: 1.8rem;">UK & USA</strong>
+              <span style="font-size: 0.75rem; color: #A0998E; text-transform: uppercase;">Dual Electrics Standard</span>
+            </div>
+            <div>
+              <strong style="display: block; font-family: var(--font-heading); font-size: 1.8rem;">5-Year</strong>
+              <span style="font-size: 0.75rem; color: #A0998E; text-transform: uppercase;">Atelier Warranty</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <span class="badge-gold">Flagship Atelier Piece</span>
+          <div style="margin: 2.5rem auto; width: 140px; height: 180px; border-radius: 8px; background: linear-gradient(135deg, #A76D38 0%, #5C3A1E 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 15px 35px rgba(0,0,0,0.6); border: 2px solid var(--color-gold);">
+            <div style="font-size: 2.5rem; color: #F4EEDB;">⚜</div>
+            <span style="font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-gold); margin-top: 0.5rem;">HAND-SEWN</span>
+          </div>
+          <h3 style="color: #FFF; font-size: 1.6rem;">The Kensington Saddle Table Lamp</h3>
+          <p style="color: var(--color-gold); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em; margin-top: 0.25rem;">
+            Burnished Havana Leather • Brushed Brass Core
+          </p>
+          <div style="margin-top: 1.5rem; font-size: 1.35rem; font-weight: 600; color: #FFF;">$495 USD / £390 GBP</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Value Pillars -->
+  <section class="value-props">
+    <div class="container">
+      <div class="value-grid">
+        <div>
+          <strong style="display: block; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.35rem; color: var(--color-leather-primary);">
+            ⚜ Full-Grain Saddle Leather
+          </strong>
+          <p style="font-size: 0.85rem; color: var(--color-muted);">Hand-burnished vegetable-tanned hides that age with breathtaking character and golden honey patina.</p>
+        </div>
+        <div>
+          <strong style="display: block; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.35rem; color: var(--color-leather-primary);">
+            🛡 Solid Brass Engineering
+          </strong>
+          <p style="font-size: 0.85rem; color: var(--color-muted);">Precision turned from unlacquered solid brass hardware designed to endure for generations.</p>
+        </div>
+        <div>
+          <strong style="display: block; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.35rem; color: var(--color-leather-primary);">
+            ✈ UK, US & Worldwide Shipping
+          </strong>
+          <p style="font-size: 0.85rem; color: var(--color-muted);">Fully insured white-glove express delivery with all import duties covered for UK & US clients.</p>
+        </div>
+        <div>
+          <strong style="display: block; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.35rem; color: var(--color-leather-primary);">
+            ⚡ Dual Voltage & Native Plugs
+          </strong>
+          <p style="font-size: 0.85rem; color: var(--color-muted);">Equipped with native UK 3-pin (230V) or US 2-pin (120V) braided silk wiring.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Collection Showcase -->
+  <section id="collection" style="padding: 6rem 0;">
+    <div class="container">
+      <div style="text-align: center; max-width: 650px; margin: 0 auto 3rem;">
+        <span class="eyebrow">Atelier Masterworks</span>
+        <h2 style="font-size: 2.5rem; margin-bottom: 0.75rem;">Signature Handcrafted Leather Lamps</h2>
+        <p style="color: var(--color-muted);">Each fixture is individually hand-stitched from vegetable-tanned full-grain leather, pairing warm amber lighting with heirloom saddlery.</p>
+      </div>
+
+      <div class="products-grid">
+        <!-- Lamp 1 -->
+        <div class="card">
+          <div class="card-media">
+            <div class="card-badges">
+              <span class="badge-leather">Full-Grain Leather</span>
+              <span class="badge-gold">Signature Piece</span>
+            </div>
+            <div style="font-size: 3rem; color: var(--color-gold); margin-bottom: 0.5rem;">⚜</div>
+            <div class="font-serif" style="font-size: 1.4rem;">The Kensington Table Lamp</div>
+            <span style="font-size: 0.75rem; color: var(--color-gold); text-transform: uppercase; margin-top: 0.25rem;">Havana Cognac Leather</span>
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">The Kensington Table Lamp</h3>
+            <p class="card-subtitle">Burnished Cognac Leather & Antiqued Brass</p>
+            <div class="card-footer">
+              <div style="font-size: 1.2rem; font-weight: 600; margin-bottom: 0.25rem;">$495 USD / £390 GBP</div>
+              <span style="font-size: 0.75rem; color: var(--color-gold); text-transform: uppercase;">UK 230V & US 120V Plugs Available</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Lamp 2 -->
+        <div class="card">
+          <div class="card-media">
+            <div class="card-badges">
+              <span class="badge-leather">Bridle Leather</span>
+            </div>
+            <div style="font-size: 3rem; color: var(--color-gold); margin-bottom: 0.5rem;">⚜</div>
+            <div class="font-serif" style="font-size: 1.4rem;">The Mayfair Architect Desk Lamp</div>
+            <span style="font-size: 0.75rem; color: var(--color-gold); text-transform: uppercase; margin-top: 0.25rem;">Saddle Brown Leather</span>
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">The Mayfair Architect Desk Lamp</h3>
+            <p class="card-subtitle">360° Articulated Arm & Dimmable Knurled Switch</p>
+            <div class="card-footer">
+              <div style="font-size: 1.2rem; font-weight: 600; margin-bottom: 0.25rem;">$580 USD / £460 GBP</div>
+              <span style="font-size: 0.75rem; color: var(--color-gold); text-transform: uppercase;">Universal Dual Voltage Standard</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Lamp 3 -->
+        <div class="card">
+          <div class="card-media">
+            <div class="card-badges">
+              <span class="badge-leather">Full-Grain Leather</span>
+              <span class="badge-gold">Limited Edition</span>
+            </div>
+            <div style="font-size: 3rem; color: var(--color-gold); margin-bottom: 0.5rem;">⚜</div>
+            <div class="font-serif" style="font-size: 1.4rem;">The Manhattan Reading Floor Lamp</div>
+            <span style="font-size: 0.75rem; color: var(--color-gold); text-transform: uppercase; margin-top: 0.25rem;">Espresso Obsidian Calfskin</span>
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">The Manhattan Floor Lamp</h3>
+            <p class="card-subtitle">Espresso Black Leather & Heavy Cast Brass Base</p>
+            <div class="card-footer">
+              <div style="font-size: 1.2rem; font-weight: 600; margin-bottom: 0.25rem;">$890 USD / £710 GBP</div>
+              <span style="font-size: 0.75rem; color: var(--color-gold); text-transform: uppercase;">White-Glove Insured Delivery</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Lamp 4 -->
+        <div class="card">
+          <div class="card-media">
+            <div class="card-badges">
+              <span class="badge-leather">Vegetable Tanned</span>
+            </div>
+            <div style="font-size: 3rem; color: var(--color-gold); margin-bottom: 0.5rem;">⚜</div>
+            <div class="font-serif" style="font-size: 1.4rem;">The Florentine Bedside Sconce</div>
+            <span style="font-size: 0.75rem; color: var(--color-gold); text-transform: uppercase; margin-top: 0.25rem;">British Racing Green Leather</span>
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">The Florentine Bedside Sconce</h3>
+            <p class="card-subtitle">Olive Leather Strap & Warm Belgian Linen Shade</p>
+            <div class="card-footer">
+              <div style="font-size: 1.2rem; font-weight: 600; margin-bottom: 0.25rem;">$340 USD / £270 GBP</div>
+              <span style="font-size: 0.75rem; color: var(--color-gold); text-transform: uppercase;">Dual Voltage UK (230V) / US (120V)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Story & Craftsmanship -->
+  <section id="story" style="background: #121110; color: #FFF; padding: 6.5rem 0;">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; align-items: center;">
+        <div style="border: 1px solid rgba(197,160,89,0.3); border-radius: 4px; padding: 2rem; background: #1C1917; text-align: center;">
+          <div style="font-size: 4rem; color: var(--color-gold); margin-bottom: 1rem;">⚜</div>
+          <blockquote class="font-serif" style="font-size: 1.75rem; font-style: italic; color: #FFF; line-height: 1.3; margin-bottom: 1rem;">
+            "True luxury is felt before it is seen."
+          </blockquote>
+          <p style="color: #9C9385; font-size: 0.9rem;">
+            Hand-burnished vegetable-tanned hides from Tuscany, assembled in our Mayfair workshop.
+          </p>
+        </div>
+
+        <div>
+          <span class="eyebrow">Heritage Craftsmanship</span>
+          <h2 style="font-size: 2.75rem; color: #FFF; margin-bottom: 1.5rem; line-height: 1.2;">
+            Where Master Saddle Stitching Meets Warm Amber Glow
+          </h2>
+          <p style="color: #B5AB9D; line-height: 1.8; margin-bottom: 2rem;">
+            Every Luxora fixture is wrapped by hand in vegetable-tanned leather sourced from historic family tanneries in Tuscany. Hand-waxed Irish linen thread is stitched using traditional saddlery techniques that date back over two centuries.
+          </p>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+            <div>
+              <h4 style="color: var(--color-gold); text-transform: uppercase; font-size: 0.95rem; margin-bottom: 0.5rem;">Natural Patina</h4>
+              <p style="font-size: 0.85rem; color: #9E9587;">Untreated with synthetic coats. Our leather deepens with rich honey hues over decades.</p>
+            </div>
+            <div>
+              <h4 style="color: var(--color-gold); text-transform: uppercase; font-size: 0.95rem; margin-bottom: 0.5rem;">Silk-Wrapped Wiring</h4>
+              <p style="font-size: 0.85rem; color: #9E9587;">Twisted braided Italian silk flex paired with solid brass unlacquered rocker switches.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer style="background: #0E0D0C; color: #8F877B; padding: 4rem 0 2rem; border-top: 1px solid #24201C;">
+    <div class="container">
+      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #24201C; padding-bottom: 2.5rem; margin-bottom: 2rem;">
+        <div>
+          <span class="logo-title" style="color: #FFF;">LUXORA</span>
+          <p style="font-size: 0.85rem; color: #8F877B; margin-top: 0.5rem;">Bespoke Architectural Leather Lighting • Mayfair, London & Madison Ave, New York</p>
+        </div>
+        <div style="color: var(--color-gold); font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase;">
+          UK • USA • Worldwide Express Delivery
+        </div>
+      </div>
+      <p style="font-size: 0.78rem; text-align: center;">&copy; 2026 Luxora Atelier Lighting Ltd. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Slide-out Cart Drawer -->
+  <div id="cart-backdrop" class="cart-backdrop" onclick="toggleCart()"></div>
+  <div id="cart-drawer" class="cart-drawer">
+    <div style="padding: 1.5rem 2rem; border-bottom: 1px solid var(--color-border); display: flex; justify-content: space-between; align-items: center;">
+      <h3 style="font-size: 1.3rem;">Your Atelier Selection</h3>
+      <button onclick="toggleCart()" style="background: none; border: none; font-size: 1.5rem; cursor: pointer;">&times;</button>
+    </div>
+    <div style="background: #F8F5F0; padding: 0.75rem 2rem; font-size: 0.8rem; border-bottom: 1px solid var(--color-border); color: var(--color-leather-primary); font-weight: 600;">
+      ✓ Qualified for Complimentary Insured Express Delivery (UK & USA)
+    </div>
+    <div style="padding: 2rem; flex-grow: 1;">
+      <div style="display: grid; grid-template-columns: 80px 1fr; gap: 1rem; align-items: center; border-bottom: 1px solid var(--color-border); padding-bottom: 1.5rem;">
+        <div style="width: 80px; height: 90px; background: #2A241F; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: var(--color-gold); font-size: 1.8rem;">⚜</div>
+        <div>
+          <h4 style="font-size: 1rem;">The Kensington Saddle Lamp</h4>
+          <span style="font-size: 0.75rem; color: var(--color-muted); display: block;">Havana Leather • UK 230V Plug</span>
+          <strong style="display: block; margin-top: 0.35rem;">$495 USD / £390 GBP</strong>
+        </div>
+      </div>
+    </div>
+    <div style="padding: 2rem; border-top: 1px solid var(--color-border); background: #FAF7F2;">
+      <div style="display: flex; justify-content: space-between; font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem;">
+        <span>Subtotal</span>
+        <span>$495.00 USD</span>
+      </div>
+      <button class="btn btn--primary" style="width: 100%;" onclick="alert('Proceeding to Shopify checkout!')">Proceed to Checkout &rarr;</button>
+    </div>
+  </div>
+
+  <script>
+    function toggleCart() {
+      document.getElementById('cart-drawer').classList.toggle('active');
+      document.getElementById('cart-backdrop').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
