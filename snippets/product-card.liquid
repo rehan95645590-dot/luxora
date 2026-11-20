@@ -1,0 +1,90 @@
+{% comment %}
+  Renders an ultra-luxury product card
+  Accepts:
+  - product_card_product: {Object} Product Liquid object
+{% endcomment %}
+{%- liquid
+  assign p = product_card_product
+  assign featured_media = p.featured_media
+  assign secondary_media = p.media[1] | default: featured_media
+-%}
+
+<div class="product-card group" data-product-id="{{ p.id }}">
+  <div class="product-card__media-wrapper">
+    <a href="{{ p.url }}" class="product-card__link" aria-label="{{ p.title | escape }}">
+      {%- if featured_media != blank -%}
+        <img
+          src="{{ featured_media | image_url: width: 700 }}"
+          alt="{{ featured_media.alt | default: p.title | escape }}"
+          loading="lazy"
+          class="product-card__image product-card__image--primary"
+          width="700"
+          height="875"
+        >
+        {%- if secondary_media != blank and secondary_media != featured_media -%}
+          <img
+            src="{{ secondary_media | image_url: width: 700 }}"
+            alt="{{ secondary_media.alt | default: p.title | escape }}"
+            loading="lazy"
+            class="product-card__image product-card__image--hover"
+            width="700"
+            height="875"
+          >
+        {%- endif -%}
+      {%- else -%}
+        <div class="product-card__placeholder">
+          <div class="placeholder-leather-texture"></div>
+          <span class="placeholder-title">{{ p.title | default: "The Kensington Table Lamp" }}</span>
+        </div>
+      {%- endif -%}
+    </a>
+
+    <div class="product-card__badges">
+      <span class="badge-leather-tag">Full-Grain Leather</span>
+      {%- if p.tags contains 'bestseller' -%}
+        <span class="badge-gold">Atelier Signature</span>
+      {%- endif -%}
+    </div>
+
+    <!-- Quick Actions -->
+    <div class="product-card__quick-bar">
+      {%- if p.available -%}
+        <form method="post" action="/cart/add" class="quick-add-form" data-type="add-to-cart-form">
+          <input type="hidden" name="id" value="{{ p.selected_or_first_available_variant.id }}">
+          <button type="submit" class="btn btn--quick-add">
+            <span>Acquire Piece</span>
+            {% render 'icon-arrow' %}
+          </button>
+        </form>
+      {%- else -%}
+        <button class="btn btn--quick-add" disabled>Reserved</button>
+      {%- endif -%}
+    </div>
+  </div>
+
+  <div class="product-card__content">
+    <div class="product-card__rating">
+      <div class="stars">
+        {% render 'icon-star' %}
+        {% render 'icon-star' %}
+        {% render 'icon-star' %}
+        {% render 'icon-star' %}
+        {% render 'icon-star' %}
+      </div>
+      <span class="rating-text">5.0 (Handcrafted in Small Batches)</span>
+    </div>
+
+    <h3 class="product-card__title">
+      <a href="{{ p.url }}">{{ p.title | default: "Hand-Stitched Saddle Desk Lamp" }}</a>
+    </h3>
+
+    <p class="product-card__subtitle text-muted">
+      {{ p.metafields.custom.leather_type | default: "Tuscan Vegetable-Tanned Leather & Brushed Brass" }}
+    </p>
+
+    <div class="product-card__footer">
+      {% render 'price', product: p %}
+      <span class="voltage-indicator">UK (230V) / US (120V) Plug Available</span>
+    </div>
+  </div>
+</div>

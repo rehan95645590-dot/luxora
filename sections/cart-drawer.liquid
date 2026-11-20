@@ -1,0 +1,63 @@
+<div id="cart-drawer-backdrop" class="cart-drawer__backdrop"></div>
+
+<div id="cart-drawer" class="cart-drawer" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Shopping Cart">
+  <div class="cart-drawer__header">
+    <div>
+      <h3 class="font-serif" style="font-size: 1.4rem;">Your Atelier Selection</h3>
+      <span style="font-size: 0.75rem; color: var(--color-gold); text-transform: uppercase; letter-spacing: 0.1em;">
+        Insured Express International Dispatch
+      </span>
+    </div>
+    <button class="action-btn" data-cart-drawer-close aria-label="Close cart">
+      {% render 'icon-close' %}
+    </button>
+  </div>
+
+  <div class="cart-drawer__shipping-bar">
+    <div style="display: flex; justify-content: space-between; font-weight: 500;">
+      <span>Complimentary Delivery</span>
+      <span class="text-gold">Unlocked (UK & USA)</span>
+    </div>
+    <div class="shipping-bar-progress">
+      <div class="shipping-bar-progress__fill" style="width: 100%;"></div>
+    </div>
+  </div>
+
+  <div class="cart-drawer__items">
+    <div class="cart-drawer__item">
+      <div class="cart-drawer__item-img" style="background: radial-gradient(circle, #2A241F 0%, #151311 100%); display: flex; align-items: center; justify-content: center; color: var(--color-gold);">
+        ⚜
+      </div>
+      <div>
+        <h4 style="font-size: 1.05rem; margin-bottom: 0.25rem;">The Kensington Saddle Lamp</h4>
+        <p style="font-size: 0.78rem; color: var(--color-muted); margin-bottom: 0.5rem;">Saddle Tan Leather • UK 230V Plug</p>
+        <span class="price-item font-medium">$495 USD / £390 GBP</span>
+      </div>
+      <div>
+        <span style="font-size: 0.85rem; font-weight: 600;">Qty: 1</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="cart-drawer__footer">
+    <div class="cart-subtotal">
+      <span>Subtotal</span>
+      <span>$495.00 USD</span>
+    </div>
+    <p style="font-size: 0.78rem; color: var(--color-muted); margin-bottom: 1.25rem; line-height: 1.5;">
+      Taxes, duties, and insured worldwide delivery calculated at checkout.
+    </p>
+
+    <a href="/checkout" class="btn btn--primary w-full" style="width: 100%; padding: 1.15rem 1rem;">
+      Proceed to Secure Checkout
+      {% render 'icon-arrow' %}
+    </a>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Cart Drawer",
+  "settings": []
+}
+{% endschema %}

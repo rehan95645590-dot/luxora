@@ -1,0 +1,44 @@
+{
+  "general": {
+    "accessibility": {
+      "close": "Close",
+      "skip_to_content": "Skip to content"
+    },
+    "currency": {
+      "dropdown_label": "Select your currency & region"
+    },
+    "search": {
+      "search": "Search",
+      "placeholder": "Search luxury lamps..."
+    }
+  },
+  "sections": {
+    "header": {
+      "cart": "Cart",
+      "account": "Account",
+      "menu": "Menu"
+    },
+    "cart": {
+      "title": "Your Atelier Selection",
+      "empty": "Your cart is currently empty",
+      "continue_shopping": "Explore Leather Lamps",
+      "subtotal": "Estimated Subtotal",
+      "checkout": "Proceed to Secure Checkout",
+      "taxes_and_shipping_policy_at_checkout_html": "Taxes, duties, and insured worldwide delivery calculated at checkout.",
+      "free_shipping_qualified": "You qualify for Complimentary Insured Express Delivery!",
+      "free_shipping_short": "Add {{ amount }} more for Free Express Delivery"
+    }
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "Acquire This Piece",
+      "sold_out": "Currently Reserved",
+      "unavailable": "Unavailable",
+      "quantity": "Quantity",
+      "leather_finish": "Leather Shade",
+      "plug_region": "Electrical & Plug Standard",
+      "in_stock": "In Stock — Ready for Immediate Dispatch",
+      "handcrafted_notice": "Hand-burnished full-grain leather • Individually numbered"
+    }
+  }
+}

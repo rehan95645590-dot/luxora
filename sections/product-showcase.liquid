@@ -1,0 +1,95 @@
+<section class="product-showcase section-spacing" style="background: #FAF7F2; border-bottom: 1px solid var(--color-border);">
+  <div class="container">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 4rem; align-items: center;">
+      
+      <!-- Interactive Showcase Diagram -->
+      <div style="position: relative; background: #FFFFFF; padding: 3rem 2rem; border-radius: var(--radius-sm); border: 1px solid var(--color-border); box-shadow: var(--shadow-luxury);">
+        <div style="text-align: center; margin-bottom: 2rem;">
+          <span class="badge-gold">Engineered In London & Florence</span>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+          <div style="display: flex; gap: 1rem; align-items: center; padding: 1rem; background: #F8F5F0; border-radius: 4px; border-left: 3px solid var(--color-gold);">
+            <div style="width: 24px; height: 24px; border-radius: 50%; background: var(--color-dark); color: #FFF; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 700;">1</div>
+            <div>
+              <strong style="font-size: 0.9rem; display: block;">Hand-Burnished Bridle Leather Stem</strong>
+              <span style="font-size: 0.8rem; color: var(--color-muted);">Stitched with 0.8mm waxed cord for structural longevity</span>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 1rem; align-items: center; padding: 1rem; background: #F8F5F0; border-radius: 4px; border-left: 3px solid var(--color-gold);">
+            <div style="width: 24px; height: 24px; border-radius: 50%; background: var(--color-dark); color: #FFF; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 700;">2</div>
+            <div>
+              <strong style="font-size: 0.9rem; display: block;">Knurled Solid Brass Dimming Wheel</strong>
+              <span style="font-size: 0.8rem; color: var(--color-muted);">Tactile rotary potentiometer smoothly dims from 100% to candlelight</span>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 1rem; align-items: center; padding: 1rem; background: #F8F5F0; border-radius: 4px; border-left: 3px solid var(--color-gold);">
+            <div style="width: 24px; height: 24px; border-radius: 50%; background: var(--color-dark); color: #FFF; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 700;">3</div>
+            <div>
+              <strong style="font-size: 0.9rem; display: block;">Braided Havana Silk Cable with UK/US Plugs</strong>
+              <span style="font-size: 0.8rem; color: var(--color-muted);">Choice of solid brass Type G (UK) or grounded Type A/B (USA) plugs</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Information -->
+      <div>
+        <span class="eyebrow">{{ section.settings.eyebrow }}</span>
+        <h2 class="font-serif" style="margin-bottom: 1rem;">{{ section.settings.heading }}</h2>
+        <p class="text-muted" style="margin-bottom: 2rem;">{{ section.settings.subtitle }}</p>
+
+        <div style="margin-bottom: 2rem;">
+          <span style="font-size: 1.5rem; font-family: var(--font-heading); font-weight: 600; color: var(--color-dark);">
+            {{ section.settings.price_display }}
+          </span>
+          <span style="display: block; font-size: 0.8rem; color: var(--color-gold); margin-top: 0.25rem; text-transform: uppercase; letter-spacing: 0.08em;">
+            Complimentary Worldwide Courier Delivery Included
+          </span>
+        </div>
+
+        <div style="display: flex; gap: 1rem;">
+          <a href="/products/mayfair-desk-lamp" class="btn btn--primary">
+            Configure & Acquire
+            {% render 'icon-arrow' %}
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Product Showcase",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow Text",
+      "default": "Architectural Spotlight"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "The Mayfair Leather Architect Desk Lamp"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Featuring 360-degree brass swivel articulation and hand-stitched English bridle leather stem."
+    },
+    {
+      "type": "text",
+      "id": "price_display",
+      "label": "Price Display",
+      "default": "$580 USD / £460 GBP"
+    }
+  ]
+}
+{% endschema %}

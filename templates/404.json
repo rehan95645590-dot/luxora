@@ -1,0 +1,17 @@
+{
+  "sections": {
+    "main": {
+      "type": "hero-banner",
+      "settings": {
+        "eyebrow": "404 Page Not Found",
+        "heading": "The Fixture You Seek Has Been Relocated",
+        "description": "Please return to our main gallery or explore our current handcrafted leather lamp catalog.",
+        "primary_button_text": "Return to Atelier Gallery",
+        "primary_button_link": "/"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

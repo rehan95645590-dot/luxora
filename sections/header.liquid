@@ -1,0 +1,53 @@
+<header class="site-header">
+  <div class="container">
+    <button class="mobile-nav-toggle" aria-label="Toggle navigation">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+
+    <nav class="site-nav" aria-label="Main Navigation">
+      <a href="/collections/all" class="site-nav__link">Catalog</a>
+      <a href="/collections/desk-lamps" class="site-nav__link">Desk Lamps</a>
+      <a href="/collections/table-lamps" class="site-nav__link">Table Lamps</a>
+      <a href="/collections/floor-lamps" class="site-nav__link">Floor Lamps</a>
+      <a href="#story" class="site-nav__link">Craftsmanship</a>
+    </nav>
+
+    <div class="site-header__logo">
+      <a href="/" class="site-header__logo-link">
+        <span class="site-header__logo-text">{{ section.settings.logo_text | default: "LUXORA" }}</span>
+        <span class="site-header__logo-sub">Atelier • London & New York</span>
+      </a>
+    </div>
+
+    <div class="site-header__actions">
+      <button class="action-btn" data-currency-modal-open aria-label="Choose country and currency">
+        <span style="font-size: 0.75rem; letter-spacing: 0.1em; font-weight: 600; color: var(--color-gold);">REGION</span>
+      </button>
+
+      <a href="/search" class="action-btn" aria-label="Search">
+        {% render 'icon-search' %}
+      </a>
+
+      <button class="action-btn cart-trigger" data-cart-drawer-open aria-label="Open shopping bag">
+        {% render 'icon-cart' %}
+        <span class="cart-count-bubble" style="{% if cart.item_count == 0 %}display: none;{% endif %}">
+          {{ cart.item_count }}
+        </span>
+      </button>
+    </div>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "text",
+      "id": "logo_text",
+      "label": "Brand Logo Text",
+      "default": "LUXORA"
+    }
+  ]
+}
+{% endschema %}

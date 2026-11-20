@@ -1,0 +1,77 @@
+<section class="customer-reviews section-spacing" style="background: #FAF7F2; border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
+  <div class="container">
+    <div style="text-align: center; max-width: 650px; margin: 0 auto 3.5rem;">
+      <span class="eyebrow">{{ section.settings.eyebrow }}</span>
+      <h2 class="font-serif">{{ section.settings.heading }}</h2>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+      
+      <div style="background: #FFFFFF; padding: 2.25rem; border-radius: var(--radius-sm); border: 1px solid var(--color-border); box-shadow: var(--shadow-subtle); display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <div style="display: flex; gap: 3px; margin-bottom: 1rem;">
+            {% render 'icon-star' %}{% render 'icon-star' %}{% render 'icon-star' %}{% render 'icon-star' %}{% render 'icon-star' %}
+          </div>
+          <p class="font-serif font-serif-italic" style="font-size: 1.15rem; color: #2B2621; line-height: 1.6; margin-bottom: 1.5rem;">
+            "We sourced six Mayfair lamps for a townhouse in Chelsea, London. The hand-burnished leather aroma and the precision dimming are utterly peerless. True museum caliber."
+          </p>
+        </div>
+        <div>
+          <strong style="display: block; font-size: 0.95rem; color: var(--color-dark);">Alistair V. Montagu</strong>
+          <span style="font-size: 0.8rem; color: var(--color-gold); text-transform: uppercase; letter-spacing: 0.08em;">Principal Architect • Kensington & Chelsea, UK</span>
+        </div>
+      </div>
+
+      <div style="background: #FFFFFF; padding: 2.25rem; border-radius: var(--radius-sm); border: 1px solid var(--color-border); box-shadow: var(--shadow-subtle); display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <div style="display: flex; gap: 3px; margin-bottom: 1rem;">
+            {% render 'icon-star' %}{% render 'icon-star' %}{% render 'icon-star' %}{% render 'icon-star' %}{% render 'icon-star' %}
+          </div>
+          <p class="font-serif font-serif-italic" style="font-size: 1.15rem; color: #2B2621; line-height: 1.6; margin-bottom: 1.5rem;">
+            "Shipped to Manhattan within 4 business days. The custom 120V US plug and heavy brass weighted base make it an instant focal point in my study. Incredible craftsmanship."
+          </p>
+        </div>
+        <div>
+          <strong style="display: block; font-size: 0.95rem; color: var(--color-dark);">Eleanor Sterling, AIA</strong>
+          <span style="font-size: 0.8rem; color: var(--color-gold); text-transform: uppercase; letter-spacing: 0.08em;">Interior Design Studio • New York, NY, USA</span>
+        </div>
+      </div>
+
+      <div style="background: #FFFFFF; padding: 2.25rem; border-radius: var(--radius-sm); border: 1px solid var(--color-border); box-shadow: var(--shadow-subtle); display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <div style="display: flex; gap: 3px; margin-bottom: 1rem;">
+            {% render 'icon-star' %}{% render 'icon-star' %}{% render 'icon-star' %}{% render 'icon-star' %}{% render 'icon-star' %}
+          </div>
+          <p class="font-serif font-serif-italic" style="font-size: 1.15rem; color: #2B2621; line-height: 1.6; margin-bottom: 1.5rem;">
+            "The Tuscan saddle leather has begun taking on the most wonderful golden patina after 8 months. Luxora is that rare atelier that still honors traditional saddlery."
+          </p>
+        </div>
+        <div>
+          <strong style="display: block; font-size: 0.95rem; color: var(--color-dark);">Jean-Marc de Courcy</strong>
+          <span style="font-size: 0.8rem; color: var(--color-gold); text-transform: uppercase; letter-spacing: 0.08em;">Private Collector • Geneva, Switzerland</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Customer Reviews",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow Text",
+      "default": "Collector & Designer Acclaim"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Praised by Leading Interior Architects Worldwide"
+    }
+  ]
+}
+{% endschema %}

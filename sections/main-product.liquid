@@ -1,0 +1,122 @@
+<section class="main-product section-spacing">
+  <div class="container">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 4.5rem; align-items: start;">
+      
+      <!-- Product Gallery -->
+      <div class="product-gallery">
+        <div style="aspect-ratio: 4/5; background: radial-gradient(circle, #2A241F 0%, #151311 100%); border-radius: var(--radius-sm); border: 1px solid var(--color-border); display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+          {%- if product.featured_media != blank -%}
+            <img src="{{ product.featured_media | image_url: width: 900 }}" alt="{{ product.title | escape }}" style="width: 100%; height: 100%; object-fit: cover;">
+          {%- else -%}
+            <div class="placeholder-leather-texture" style="width: 100px; height: 100px;"></div>
+            <span class="font-serif" style="color: #E2D9CD; font-size: 1.5rem; margin-top: 1rem;">
+              {{ product.title | default: "The Kensington Saddle Table Lamp" }}
+            </span>
+            <span style="color: var(--color-gold); font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.5rem;">
+              Handcrafted Full-Grain Leather & Aged Brass
+            </span>
+          {%- endif -%}
+          <div style="position: absolute; top: 1.5rem; left: 1.5rem;">
+            <span class="badge-gold">Atelier Masterwork</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Form & Specifications -->
+      <div class="product-details">
+        <span class="eyebrow">Handcrafted Lighting Atelier</span>
+        <h1 class="font-serif" style="font-size: 2.5rem; margin-bottom: 0.75rem;">
+          {{ product.title | default: "The Kensington Saddle Table Lamp" }}
+        </h1>
+
+        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+          <div class="stars">{% render 'icon-star' %}{% render 'icon-star' %}{% render 'icon-star' %}{% render 'icon-star' %}{% render 'icon-star' %}</div>
+          <span style="font-size: 0.85rem; color: var(--color-muted);">5.0 (42 Collector Reviews)</span>
+        </div>
+
+        <div style="margin-bottom: 2rem;">
+          {% render 'price', product: product %}
+          <p style="font-size: 0.85rem; color: var(--color-gold); margin-top: 0.5rem;">
+            Complimentary Insured Worldwide Delivery (Duties Prepaid for UK & US)
+          </p>
+        </div>
+
+        <div class="product-description" style="color: #4A443D; line-height: 1.8; margin-bottom: 2rem;">
+          {{ product.description | default: "A pinnacle of saddlery craftsmanship and optical precision. The Kensington Table Lamp features full-grain Florentine vegetable-tanned leather hand-stitched over a solid cast brass core, offering a tactile warmth and ambient glow tuned specifically for refined living spaces and executive studies." }}
+        </div>
+
+        <!-- Variant Options Form -->
+        {% form 'product', product, class: 'product-form' %}
+          <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id | default: 1 }}">
+
+          <!-- Leather Swatch Selector -->
+          <div class="swatch-group" style="margin-bottom: 2rem;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 0.75rem; font-size: 0.88rem;">
+              <strong>Leather Finish: <span class="selected-swatch-name" style="color: var(--color-gold); font-weight: 600;">Saddle Tan</span></strong>
+              <span class="text-muted" style="font-size: 0.78rem;">Full-Grain Tuscan Hide</span>
+            </div>
+            <div style="display: flex; gap: 0.75rem;">
+              <button type="button" class="swatch-option active" data-value="Saddle Tan" style="width: 38px; height: 38px; border-radius: 50%; background: #8B5A2B; border: 2px solid #FFFFFF; box-shadow: 0 0 0 2px var(--color-gold); cursor: pointer;" title="Saddle Tan"></button>
+              <button type="button" class="swatch-option" data-value="Havana Cognac" style="width: 38px; height: 38px; border-radius: 50%; background: #A76D38; border: 2px solid #FFFFFF; box-shadow: 0 0 0 1px var(--color-border); cursor: pointer;" title="Havana Cognac"></button>
+              <button type="button" class="swatch-option" data-value="Espresso Obsidian" style="width: 38px; height: 38px; border-radius: 50%; background: #26211C; border: 2px solid #FFFFFF; box-shadow: 0 0 0 1px var(--color-border); cursor: pointer;" title="Espresso Obsidian"></button>
+              <button type="button" class="swatch-option" data-value="British Racing Green" style="width: 38px; height: 38px; border-radius: 50%; background: #213B2E; border: 2px solid #FFFFFF; box-shadow: 0 0 0 1px var(--color-border); cursor: pointer;" title="British Racing Green"></button>
+            </div>
+          </div>
+
+          <!-- Regional Plug Selector -->
+          <div class="plug-group" style="margin-bottom: 2.25rem;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 0.75rem; font-size: 0.88rem;">
+              <strong>Electrical Standard & Plug:</strong>
+              <span class="text-muted" style="font-size: 0.78rem;">Universal Dual Voltage (110V - 240V)</span>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+              <div class="plug-pill active" style="padding: 0.75rem 1rem; border: 1px solid var(--color-gold); border-radius: 4px; background: #FAF7F2; cursor: pointer;">
+                <strong style="display: block; font-size: 0.85rem;">🇬🇧 UK Standard</strong>
+                <span style="font-size: 0.75rem; color: var(--color-muted);">230V • Type G 3-Pin Brass</span>
+              </div>
+              <div class="plug-pill" style="padding: 0.75rem 1rem; border: 1px solid var(--color-border); border-radius: 4px; background: #FFFFFF; cursor: pointer;">
+                <strong style="display: block; font-size: 0.85rem;">🇺🇸 US Standard</strong>
+                <span style="font-size: 0.75rem; color: var(--color-muted);">120V • Type A/B Grounded</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quantity & Add to Cart -->
+          <div style="display: flex; gap: 1rem; margin-bottom: 2rem;">
+            <div style="display: flex; align-items: center; border: 1px solid var(--color-border); border-radius: 3px; background: #FFF; width: 110px;">
+              <button type="button" style="border: none; background: none; width: 32px; height: 100%; cursor: pointer;" onclick="const q=this.nextElementSibling; if(q.value>1)q.value--;">-</button>
+              <input type="number" name="quantity" value="1" min="1" style="width: 44px; text-align: center; border: none; outline: none; font-weight: 600;">
+              <button type="button" style="border: none; background: none; width: 32px; height: 100%; cursor: pointer;" onclick="const q=this.previousElementSibling; q.value++;">+</button>
+            </div>
+
+            <button type="submit" class="btn btn--primary" style="flex-grow: 1; padding: 1.15rem 2rem;">
+              <span>Acquire Handcrafted Piece</span>
+              {% render 'icon-arrow' %}
+            </button>
+          </div>
+        {% endform %}
+
+        <!-- Trust Badges -->
+        <div style="border-top: 1px solid var(--color-border); padding-top: 1.75rem; display: flex; flex-direction: column; gap: 0.85rem; font-size: 0.85rem; color: #4A443D;">
+          <div style="display: flex; align-items: center; gap: 0.75rem;">
+            {% render 'icon-shield' %}
+            <span><strong>5-Year Atelier Warranty</strong> covering all leather and electrical assemblies.</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 0.75rem;">
+            {% render 'icon-truck' %}
+            <span><strong>Dispatched within 24 Hours</strong> via DHL Express / FedEx Priority.</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Main Product",
+  "settings": []
+}
+{% endschema %}

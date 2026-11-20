@@ -1,0 +1,81 @@
+{
+  "sections": {
+    "hero_banner": {
+      "type": "hero-banner",
+      "settings": {
+        "eyebrow": "The Art of Handcrafted Illumination",
+        "heading": "Sculpted Saddle Leather & Architectural Warmth",
+        "description": "Individually hand-burnished Florentine calfskin, solid aged brass, and precision dimmable lighting. Bespoke pieces engineered for the world's most distinguished interiors.",
+        "primary_button_text": "Explore The Collection",
+        "primary_button_link": "/collections/all",
+        "secondary_button_text": "The Leather Atelier Story",
+        "secondary_button_link": "#story"
+      }
+    },
+    "value_props": {
+      "type": "value-props",
+      "settings": {}
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "settings": {
+        "eyebrow": "Atelier Masterworks",
+        "heading": "Signature Handcrafted Leather Lamps",
+        "description": "Each lamp is sculpted from vegetable-tanned full-grain leather that gains an extraordinary patina over decades.",
+        "products_to_show": 4
+      }
+    },
+    "craftsmanship_story": {
+      "type": "craftsmanship-story",
+      "settings": {
+        "eyebrow": "Heritage Craftsmanship",
+        "heading": "Where Master Saddle Stitching Meets Warm Amber Glow",
+        "story_quote": "Leather is not merely a material; it is a living medium that captures time, touch, and light.",
+        "story_body": "Every Luxora fixture is wrapped by hand in vegetable-tanned leather sourced from historic family tanneries in Tuscany. Hand-waxed Irish linen thread is stitched using traditional saddlery techniques that date back over two centuries.",
+        "button_text": "Read The Atelier Journal",
+        "button_link": "/pages/about"
+      }
+    },
+    "product_showcase": {
+      "type": "product-showcase",
+      "settings": {
+        "eyebrow": "Architectural Spotlight",
+        "heading": "The Mayfair Leather Architect Desk Lamp",
+        "subtitle": "Featuring 360-degree brass swivel articulation and hand-stitched English bridle leather stem.",
+        "price_display": "$580 USD / £460 GBP"
+      }
+    },
+    "collections_grid": {
+      "type": "collections-grid",
+      "settings": {
+        "eyebrow": "Explore by Category",
+        "heading": "Curated Illumination Categories"
+      }
+    },
+    "customer_reviews": {
+      "type": "customer-reviews",
+      "settings": {
+        "eyebrow": "Collector & Designer Acclaim",
+        "heading": "Praised by Leading Interior Architects Worldwide"
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "settings": {
+        "eyebrow": "Private Collector Society",
+        "heading": "Receive Access to Private Drops & Bespoke Commissions",
+        "description": "Join our international salon of interior designers, architects, and connoisseurs. Receive private invitations to limited batch leather lamp releases."
+      }
+    }
+  },
+  "order": [
+    "hero_banner",
+    "value_props",
+    "featured_collection",
+    "craftsmanship_story",
+    "product_showcase",
+    "collections_grid",
+    "customer_reviews",
+    "newsletter"
+  ]
+}

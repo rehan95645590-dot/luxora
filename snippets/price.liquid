@@ -1,0 +1,22 @@
+{% comment %}
+  Renders a luxury formatted price
+  Accepts:
+  - product: {Object} Product Liquid object
+  - price_class: {String} Optional custom CSS class
+{% endcomment %}
+{%- liquid
+  assign target = product.selected_or_first_available_variant
+  assign compare_at_price = target.compare_at_price
+  assign price = target.price | default: 19900
+  assign available = target.available | default: true
+-%}
+
+<div class="price-wrapper {{ price_class }}">
+  {%- if compare_at_price > price -%}
+    <span class="price-item price-item--sale">{{ price | money }}</span>
+    <s class="price-item price-item--regular text-muted">{{ compare_at_price | money }}</s>
+    <span class="badge badge--gold-foil">Privilege Offer</span>
+  {%- else -%}
+    <span class="price-item price-item--regular font-medium">{{ price | money }}</span>
+  {%- endif -%}
+</div>

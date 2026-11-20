@@ -1,0 +1,37 @@
+{%- if section.settings.show_announcement -%}
+<div class="announcement-bar" role="region" aria-label="Announcement">
+  <div class="container">
+    <div class="announcement-bar__shipping">
+      {% render 'icon-truck' %}
+      <span>{{ section.settings.text }}</span>
+    </div>
+
+    <div class="announcement-bar__actions">
+      <button type="button" class="announcement-bar__currency-btn" data-currency-modal-open>
+        <span data-active-region-label>UK (GBP £) & US (USD $)</span>
+        {% render 'icon-arrow' %}
+      </button>
+    </div>
+  </div>
+</div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Announcement Bar",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_announcement",
+      "label": "Show Announcement",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Announcement Text",
+      "default": "Complimentary Insured Express Delivery across the UK & USA on all handcrafted orders"
+    }
+  ]
+}
+{% endschema %}

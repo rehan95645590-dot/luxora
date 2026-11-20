@@ -1,0 +1,163 @@
+<section class="featured-collection section-spacing">
+  <div class="container">
+    <div style="text-align: center; max-width: 680px; margin: 0 auto 4rem;">
+      <span class="eyebrow">{{ section.settings.eyebrow }}</span>
+      <h2 class="font-serif" style="margin-bottom: 1rem;">{{ section.settings.heading }}</h2>
+      <p class="text-muted">{{ section.settings.description }}</p>
+    </div>
+
+    <div class="grid" style="grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));">
+      {%- if collections[section.settings.collection].products.size > 0 -%}
+        {%- for product in collections[section.settings.collection].products limit: section.settings.products_to_show -%}
+          {% render 'product-card', product_card_product: product %}
+        {%- endfor -%}
+      {%- else -%}
+        <!-- Curated Mock Leather Lamps for Preview and Immediate Use -->
+        <div class="product-card">
+          <div class="product-card__media-wrapper">
+            <div class="product-card__placeholder">
+              <div class="placeholder-leather-texture"></div>
+              <span class="placeholder-title">The Kensington Table Lamp</span>
+            </div>
+            <div class="product-card__badges">
+              <span class="badge-leather-tag">Full-Grain Leather</span>
+              <span class="badge-gold">Signature Piece</span>
+            </div>
+          </div>
+          <div class="product-card__content">
+            <div class="product-card__rating">
+              <div class="stars">{% render 'icon-star' %}{% render 'icon-star' %}{% render 'icon-star' %}{% render 'icon-star' %}{% render 'icon-star' %}</div>
+              <span class="rating-text">5.0 (42 verified reviews)</span>
+            </div>
+            <h3 class="product-card__title"><a href="#">The Kensington Table Lamp</a></h3>
+            <p class="product-card__subtitle text-muted">Burnished Cognac Leather & Antiqued Brass</p>
+            <div class="product-card__footer">
+              <div class="price-wrapper"><span class="price-item font-medium">$495 USD / £390 GBP</span></div>
+              <span class="voltage-indicator">Dual Voltage UK (230V) / US (120V)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card__media-wrapper">
+            <div class="product-card__placeholder">
+              <div class="placeholder-leather-texture"></div>
+              <span class="placeholder-title">The Mayfair Architect Desk Lamp</span>
+            </div>
+            <div class="product-card__badges">
+              <span class="badge-leather-tag">Bridle Leather</span>
+            </div>
+          </div>
+          <div class="product-card__content">
+            <div class="product-card__rating">
+              <div class="stars">{% render 'icon-star' %}{% render 'icon-star' %}{% render 'icon-star' %}{% render 'icon-star' %}{% render 'icon-star' %}</div>
+              <span class="rating-text">5.0 (38 verified reviews)</span>
+            </div>
+            <h3 class="product-card__title"><a href="#">The Mayfair Architect Desk Lamp</a></h3>
+            <p class="product-card__subtitle text-muted">Saddle Brown Leather & Dimmable Knurled Switch</p>
+            <div class="product-card__footer">
+              <div class="price-wrapper"><span class="price-item font-medium">$580 USD / £460 GBP</span></div>
+              <span class="voltage-indicator">Dual Voltage UK (230V) / US (120V)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card__media-wrapper">
+            <div class="product-card__placeholder">
+              <div class="placeholder-leather-texture"></div>
+              <span class="placeholder-title">The Manhattan Floor Lamp</span>
+            </div>
+            <div class="product-card__badges">
+              <span class="badge-leather-tag">Full-Grain Leather</span>
+              <span class="badge-gold">Limited Edition</span>
+            </div>
+          </div>
+          <div class="product-card__content">
+            <div class="product-card__rating">
+              <div class="stars">{% render 'icon-star' %}{% render 'icon-star' %}{% render 'icon-star' %}{% render 'icon-star' %}{% render 'icon-star' %}</div>
+              <span class="rating-text">5.0 (19 verified reviews)</span>
+            </div>
+            <h3 class="product-card__title"><a href="#">The Manhattan Floor Reading Lamp</a></h3>
+            <p class="product-card__subtitle text-muted">Espresso Black Calfskin & Heavy Cast Brass Base</p>
+            <div class="product-card__footer">
+              <div class="price-wrapper"><span class="price-item font-medium">$890 USD / £710 GBP</span></div>
+              <span class="voltage-indicator">Dual Voltage UK (230V) / US (120V)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card__media-wrapper">
+            <div class="product-card__placeholder">
+              <div class="placeholder-leather-texture"></div>
+              <span class="placeholder-title">The Florentine Bedside Sconce</span>
+            </div>
+            <div class="product-card__badges">
+              <span class="badge-leather-tag">Vegetable Tanned</span>
+            </div>
+          </div>
+          <div class="product-card__content">
+            <div class="product-card__rating">
+              <div class="stars">{% render 'icon-star' %}{% render 'icon-star' %}{% render 'icon-star' %}{% render 'icon-star' %}{% render 'icon-star' %}</div>
+              <span class="rating-text">5.0 (27 verified reviews)</span>
+            </div>
+            <h3 class="product-card__title"><a href="#">The Florentine Bedside Sconce</a></h3>
+            <p class="product-card__subtitle text-muted">Olive Drab Leather Strap & Warm Linen Shade</p>
+            <div class="product-card__footer">
+              <div class="price-wrapper"><span class="price-item font-medium">$340 USD / £270 GBP</span></div>
+              <span class="voltage-indicator">Dual Voltage UK (230V) / US (120V)</span>
+            </div>
+          </div>
+        </div>
+      {%- endif -%}
+    </div>
+
+    <div style="text-align: center; margin-top: 4rem;">
+      <a href="/collections/all" class="btn btn--secondary">
+        View Entire Illumination Catalog
+        {% render 'icon-arrow' %}
+      </a>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Featured Collection",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow Text",
+      "default": "Atelier Masterworks"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Signature Handcrafted Leather Lamps"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Each lamp is sculpted from vegetable-tanned full-grain leather that gains an extraordinary patina over decades."
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+    {
+      "type": "range",
+      "id": "products_to_show",
+      "min": 2,
+      "max": 12,
+      "step": 1,
+      "label": "Products to show",
+      "default": 4
+    }
+  ]
+}
+{% endschema %}

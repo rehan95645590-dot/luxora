@@ -1,0 +1,56 @@
+<section class="newsletter section-spacing" style="background: radial-gradient(circle, #25201A 0%, #141312 85%); color: #FFFFFF; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.1);">
+  <div class="container" style="max-width: 680px;">
+    <span class="eyebrow" style="color: var(--color-gold);">{{ section.settings.eyebrow }}</span>
+    <h2 class="font-serif" style="color: #FFFFFF; margin-bottom: 1.25rem;">
+      {{ section.settings.heading }}
+    </h2>
+    <p style="color: #B8AFA2; margin-bottom: 2.5rem; line-height: 1.7;">
+      {{ section.settings.description }}
+    </p>
+
+    {% form 'customer', class: 'newsletter-form' %}
+      <input type="hidden" name="contact[tags]" value="newsletter, vip_collector">
+      <div style="display: flex; gap: 0.5rem; max-width: 480px; margin: 0 auto; flex-wrap: wrap;">
+        <input
+          type="email"
+          name="contact[email]"
+          placeholder="Enter your private email..."
+          required
+          style="flex-grow: 1; padding: 0.9rem 1.25rem; background: rgba(255,255,255,0.08); border: 1px solid rgba(197,160,89,0.4); color: #FFFFFF; border-radius: var(--radius-sm); outline: none; font-size: 0.9rem;"
+        >
+        <button type="submit" class="btn btn--gold">
+          Request Access
+        </button>
+      </div>
+      <p style="font-size: 0.75rem; color: #7F776C; margin-top: 1rem;">
+        Strict privacy guaranteed. We send exclusive releases only 4 times per year.
+      </p>
+    {% endform %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Newsletter",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow Text",
+      "default": "Private Collector Society"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Receive Access to Private Drops & Bespoke Commissions"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Join our international salon of interior designers, architects, and connoisseurs. Receive private invitations to limited batch leather lamp releases."
+    }
+  ]
+}
+{% endschema %}

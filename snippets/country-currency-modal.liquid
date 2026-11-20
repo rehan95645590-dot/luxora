@@ -1,0 +1,67 @@
+<div id="country-currency-modal" class="currency-modal" aria-hidden="true">
+  <div class="currency-modal__backdrop" data-modal-close></div>
+  <div class="currency-modal__container">
+    <div class="currency-modal__header">
+      <div class="currency-modal__title-group">
+        <h3 class="font-serif">Regional Atelier & Currency</h3>
+        <p class="text-muted">Select your delivery location and preferred currency</p>
+      </div>
+      <button class="currency-modal__close" data-modal-close aria-label="Close dialog">
+        {% render 'icon-close' %}
+      </button>
+    </div>
+
+    <div class="currency-modal__grid">
+      <div class="region-card active" data-currency="GBP" data-country="United Kingdom">
+        <div class="region-flag">🇬🇧</div>
+        <div class="region-info">
+          <strong>United Kingdom</strong>
+          <span>GBP (£) • 230V Type G Plug</span>
+        </div>
+        <span class="region-badge">Free UK Delivery</span>
+      </div>
+
+      <div class="region-card" data-currency="USD" data-country="United States">
+        <div class="region-flag">🇺🇸</div>
+        <div class="region-info">
+          <strong>United States</strong>
+          <span>USD ($) • 120V Type A/B Plug</span>
+        </div>
+        <span class="region-badge">Express Tracked</span>
+      </div>
+
+      <div class="region-card" data-currency="EUR" data-country="European Union">
+        <div class="region-flag">🇪🇺</div>
+        <div class="region-info">
+          <strong>European Union</strong>
+          <span>EUR (€) • 230V Type C/F Plug</span>
+        </div>
+        <span class="region-badge">Duties Paid</span>
+      </div>
+
+      <div class="region-card" data-currency="CAD" data-country="Canada">
+        <div class="region-flag">🇨🇦</div>
+        <div class="region-info">
+          <strong>Canada</strong>
+          <span>CAD ($) • 120V Type A Plug</span>
+        </div>
+        <span class="region-badge">Insured Courier</span>
+      </div>
+
+      <div class="region-card" data-currency="AUD" data-country="Australia">
+        <div class="region-flag">🇦🇺</div>
+        <div class="region-info">
+          <strong>Australia</strong>
+          <span>AUD ($) • 240V Type I Plug</span>
+        </div>
+        <span class="region-badge">Air Express</span>
+      </div>
+    </div>
+
+    <div class="currency-modal__footer">
+      <button class="btn btn--primary w-full" data-modal-close>
+        Confirm Region & Continue
+      </button>
+    </div>
+  </div>
+</div>

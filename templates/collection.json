@@ -1,0 +1,14 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "heading": "The Full Leather Lamp Collection",
+        "description": "Handcrafted table, desk, and floor lamps wrapped in premium vegetable-tanned leather with bespoke international electrical specifications."
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

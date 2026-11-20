@@ -1,0 +1,25 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "settings": {}
+    },
+    "reviews": {
+      "type": "customer-reviews",
+      "settings": {
+        "heading": "VIP Collector Experiences"
+      }
+    },
+    "related": {
+      "type": "featured-collection",
+      "settings": {
+        "heading": "Complementary Atelier Fixtures"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "reviews",
+    "related"
+  ]
+}
