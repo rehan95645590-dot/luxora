@@ -7,9 +7,7 @@
         "heading": "Sculpted Saddle Leather & Architectural Warmth",
         "description": "Individually hand-burnished Florentine calfskin, solid aged brass, and precision dimmable lighting. Bespoke pieces engineered for the world's most distinguished interiors.",
         "primary_button_text": "Explore The Collection",
-        "primary_button_link": "/collections/all",
-        "secondary_button_text": "The Leather Atelier Story",
-        "secondary_button_link": "#story"
+        "secondary_button_text": "The Leather Atelier Story"
       }
     },
     "value_props": {
@@ -32,8 +30,7 @@
         "heading": "Where Master Saddle Stitching Meets Warm Amber Glow",
         "story_quote": "Leather is not merely a material; it is a living medium that captures time, touch, and light.",
         "story_body": "Every Luxora fixture is wrapped by hand in vegetable-tanned leather sourced from historic family tanneries in Tuscany. Hand-waxed Irish linen thread is stitched using traditional saddlery techniques that date back over two centuries.",
-        "button_text": "Read The Atelier Journal",
-        "button_link": "/pages/about"
+        "button_text": "Read The Atelier Journal"
       }
     },
     "product_showcase": {
