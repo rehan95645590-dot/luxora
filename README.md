@@ -1,6 +1,6 @@
-# Luxora Atelier — Luxury Leather Lamps (Shopify Theme)
+# Oreliaa Atelier — Luxury Leather Lamps (Shopify Theme)
 
-An ultra-premium, bespoke Shopify Online Store 2.0 (OS 2.0) theme created for **Luxora Atelier**, a luxury lighting brand specializing in handcrafted leather lamps for discerning clientele in the **United Kingdom, United States, Europe, and worldwide**.
+An ultra-premium, bespoke Shopify Online Store 2.0 (OS 2.0) theme created for **Oreliaa Atelier**, a luxury lighting brand specializing in handcrafted leather lamps for discerning clientele in the **United Kingdom, United States, Europe, and worldwide**.
 
 ---
 
@@ -61,7 +61,7 @@ luxora/
 1. **Push your code to GitHub**:
    ```bash
    git add .
-   git commit -m "feat: complete Luxora luxury leather lamps Shopify theme"
+   git commit -m "feat: complete Oreliaa luxury leather lamps Shopify theme"
    git push -u origin main
    ```
 
@@ -79,4 +79,4 @@ luxora/
 
 ---
 
-*Crafted for Luxora Atelier — Where Master Leather Craft Meets Sculpted Light.*
+*Crafted for Oreliaa Atelier — Where Master Leather Craft Meets Sculpted Light.*

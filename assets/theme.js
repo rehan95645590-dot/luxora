@@ -1,5 +1,5 @@
 /**
- * Luxora Atelier — Core Interactive Theme Script
+ * Oreliaa Atelier — Core Interactive Theme Script
  */
 document.addEventListener('DOMContentLoaded', () => {
   initCartDrawer();
