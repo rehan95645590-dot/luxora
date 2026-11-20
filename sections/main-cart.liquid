@@ -1,0 +1,61 @@
+<section class="main-cart section-spacing">
+  <div class="container" style="max-width: 860px;">
+    <div style="text-align: center; margin-bottom: 3rem;">
+      <span class="eyebrow">Atelier Dispatch</span>
+      <h1 class="font-serif">Your Bespoke Selection</h1>
+    </div>
+
+    {%- if cart.item_count > 0 -%}
+      <form action="/cart" method="post" class="cart-form">
+        <div style="display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 2.5rem;">
+          {%- for item in cart.items -%}
+            <div style="display: grid; grid-template-columns: 100px 1fr auto; gap: 1.5rem; align-items: center; border-bottom: 1px solid var(--color-border); padding-bottom: 1.5rem;">
+              <img src="{{ item.image | image_url: width: 200 }}" alt="{{ item.title | escape }}" style="width: 100px; height: 120px; object-fit: cover; border-radius: var(--radius-sm);">
+              <div>
+                <h3 style="font-size: 1.15rem; margin-bottom: 0.25rem;">{{ item.product.title }}</h3>
+                <p style="font-size: 0.85rem; color: var(--color-muted); margin-bottom: 0.5rem;">{{ item.variant.title }}</p>
+                <span class="price-item font-medium">{{ item.final_price | money }}</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 1rem;">
+                <input type="number" name="updates[]" value="{{ item.quantity }}" min="0" style="width: 60px; padding: 0.5rem; text-align: center; border: 1px solid var(--color-border); border-radius: 3px;">
+                <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0" style="color: var(--color-muted); font-size: 0.85rem;">Remove</a>
+              </div>
+            </div>
+          {%- endfor -%}
+        </div>
+
+        <div style="text-align: right; background: #FAF7F2; padding: 2rem; border-radius: var(--radius-sm); border: 1px solid var(--color-border);">
+          <div style="font-size: 1.35rem; font-weight: 600; margin-bottom: 0.5rem;">
+            Estimated Total: {{ cart.total_price | money }}
+          </div>
+          <p style="font-size: 0.85rem; color: var(--color-muted); margin-bottom: 1.5rem;">
+            Complimentary Insured Worldwide Shipping & Duties Prepaid.
+          </p>
+          <div style="display: flex; justify-content: flex-end; gap: 1rem;">
+            <button type="submit" name="update" class="btn btn--secondary">Update Bag</button>
+            <button type="submit" name="checkout" class="btn btn--primary">Proceed to Checkout</button>
+          </div>
+        </div>
+      </form>
+    {%- else -%}
+      <div style="text-align: center; padding: 4rem 1rem; background: #FAF7F2; border-radius: var(--radius-sm); border: 1px solid var(--color-border);">
+        <div style="font-size: 2.5rem; color: var(--color-gold); margin-bottom: 1rem;">⚜</div>
+        <h2 class="font-serif" style="margin-bottom: 0.75rem;">Your Cart is Currently Empty</h2>
+        <p style="color: var(--color-muted); max-width: 440px; margin: 0 auto 2rem;">
+          Our handcrafted leather fixtures are made in limited batches. Explore our catalog to acquire your piece.
+        </p>
+        <a href="/collections/all" class="btn btn--primary">
+          Explore Leather Lamp Collection
+          {% render 'icon-arrow' %}
+        </a>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Cart Page",
+  "settings": []
+}
+{% endschema %}
