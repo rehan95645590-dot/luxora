@@ -1,13 +1,24 @@
 <section class="hero-banner section-spacing" style="background: radial-gradient(circle at 70% 30%, #2B231C 0%, #151311 75%); color: #FBF9F5; position: relative; overflow: hidden; padding-top: 6rem; padding-bottom: 7rem;">
+  <!-- Subtle Luxury Background Grid -->
   <div style="position: absolute; inset: 0; background: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23C5A059" fill-opacity="0.04"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E'); opacity: 0.6; pointer-events: none;"></div>
 
   <div class="container" style="position: relative; z-index: 2;">
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 4rem; align-items: center;">
       <div style="max-width: 620px;">
-        <span class="eyebrow" style="color: var(--color-gold);">{{ section.settings.eyebrow }}</span>
+        
+        <!-- Ambiance Mode Switcher -->
+        <div class="ambiance-switch">
+          <button type="button" class="ambiance-btn" data-mode="day">☀️ Studio Day</button>
+          <button type="button" class="ambiance-btn active" data-mode="twilight">🌇 Twilight</button>
+          <button type="button" class="ambiance-btn" data-mode="midnight">🌙 Midnight</button>
+        </div>
+
+        <span class="eyebrow" style="color: var(--color-gold); display: block;">{{ section.settings.eyebrow }}</span>
+        
         <h1 class="font-serif" style="color: #FFFFFF; margin-bottom: 1.5rem; text-wrap: balance;">
           {{ section.settings.heading }}
         </h1>
+        
         <p style="color: #C8BFB3; font-size: 1.15rem; margin-bottom: 2.5rem; line-height: 1.8;">
           {{ section.settings.description }}
         </p>
@@ -22,6 +33,7 @@
           </a>
         </div>
 
+        <!-- Trust Stats -->
         <div style="margin-top: 3.5rem; display: flex; align-items: center; gap: 2rem; border-top: 1px solid rgba(197, 160, 89, 0.25); padding-top: 1.75rem;">
           <div>
             <span style="display: block; font-family: var(--font-heading); font-size: 1.75rem; color: #FFFFFF; font-weight: 600;">100%</span>
@@ -40,27 +52,46 @@
         </div>
       </div>
 
-      <!-- Hero Visual Display -->
+      <!-- Interactive Illuminated Lamp Stage -->
       <div style="position: relative;">
-        <div style="background: radial-gradient(circle, #3D3328 0%, #1A1714 80%); border-radius: var(--radius-md); padding: 3rem 2rem; border: 1px solid rgba(197, 160, 89, 0.3); box-shadow: 0 30px 60px rgba(0,0,0,0.4); text-align: center; position: relative;">
-          
-          <div style="position: absolute; top: 1.5rem; right: 1.5rem; background: var(--color-gold); color: #141312; font-size: 0.7rem; font-weight: 700; padding: 0.35rem 0.75rem; border-radius: 2px; letter-spacing: 0.12em; text-transform: uppercase;">
-            Flagship 2026
+        <div class="interactive-lamp-stage">
+          <!-- Floating Ambient Motes -->
+          <div class="ambient-mote mote-1"></div>
+          <div class="ambient-mote mote-2"></div>
+          <div class="ambient-mote mote-3"></div>
+          <div class="ambient-mote mote-4"></div>
+
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; position: relative; z-index: 5;">
+            <span class="badge-gold">Live Lighting Simulation</span>
+            <span id="dimmer-status-label" style="font-size: 0.75rem; color: var(--color-gold); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;">
+              75% • 2700K Amber Glow
+            </span>
           </div>
 
-          <div style="width: 220px; height: 300px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative;">
-            <div style="width: 180px; height: 60px; background: #C5A059; border-radius: 50% 50% 0 0; opacity: 0.9; box-shadow: 0 0 60px rgba(244, 213, 140, 0.5);"></div>
-            <div style="width: 28px; height: 180px; background: linear-gradient(to right, #613C1C, #965F2F, #573417); border-radius: 4px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); position: relative;">
-              <div style="position: absolute; top: 10px; bottom: 10px; left: 4px; width: 1px; border-left: 2px dashed #C5A059;"></div>
-              <div style="position: absolute; top: 10px; bottom: 10px; right: 4px; width: 1px; border-right: 2px dashed #C5A059;"></div>
+          <!-- Realistic Layered Lamp Structure -->
+          <div class="lamp-fixture">
+            <div class="lamp-shade lit"></div>
+            <div class="lamp-light-cone"></div>
+            <div class="lamp-stem"></div>
+            <div class="lamp-base"></div>
+          </div>
+
+          <!-- Interactive Brass Dimmer Controller -->
+          <div class="lamp-controller-bar">
+            <button type="button" id="dimmer-toggle" class="dimmer-toggle-btn">
+              Extinguish
+            </button>
+            <div class="dimmer-slider-wrap">
+              <span style="font-size: 0.7rem; color: #A39B8F; text-transform: uppercase;">Dim</span>
+              <input type="range" id="lamp-dimmer-slider" class="dimmer-slider" min="0" max="100" value="75">
+              <span style="font-size: 0.7rem; color: #A39B8F; text-transform: uppercase;">Bright</span>
             </div>
-            <div style="width: 130px; height: 24px; background: #C5A059; border-radius: 6px; box-shadow: 0 8px 20px rgba(0,0,0,0.6);"></div>
           </div>
 
-          <div style="margin-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.25rem;">
-            <h3 class="font-serif" style="color: #FFFFFF; font-size: 1.4rem;">The Kensington Saddle Table Lamp</h3>
-            <p style="color: #C5A059; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 0.25rem;">
-              Burnished Havana Leather • Brushed Brass Base
+          <div style="margin-top: 1.5rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem;">
+            <h3 class="font-serif" style="color: #FFFFFF; font-size: 1.35rem;">The Kensington Saddle Table Lamp</h3>
+            <p style="color: var(--color-gold); font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; margin-top: 0.25rem;">
+              Vegetable-Tanned Tuscan Leather • Solid Turn-Cast Brass
             </p>
           </div>
         </div>

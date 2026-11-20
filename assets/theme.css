@@ -794,3 +794,263 @@ p {
     max-width: 100%;
   }
 }
+
+
+/* ==========================================================================
+   LUXORA ATELIER — BESPOKE LIGHTING & AMBIENT ANIMATIONS
+   ========================================================================== */
+
+/* Gold Foil Shimmer */
+@keyframes goldFoilShimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.btn--gold, .badge-gold {
+  position: relative;
+  background: linear-gradient(110deg, #C5A059 0%, #E9D29A 40%, #C5A059 70%);
+  background-size: 200% 100%;
+  animation: goldFoilShimmer 6s infinite ease-in-out;
+}
+
+/* Ambient Lamp Breathing Pulse */
+@keyframes ambientPulse {
+  0%, 100% {
+    box-shadow: 0 0 50px rgba(245, 190, 105, 0.45), 0 0 100px rgba(245, 190, 105, 0.25);
+    filter: drop-shadow(0 0 25px rgba(245, 190, 105, 0.6));
+  }
+  50% {
+    box-shadow: 0 0 75px rgba(245, 190, 105, 0.65), 0 0 140px rgba(245, 190, 105, 0.35);
+    filter: drop-shadow(0 0 35px rgba(245, 190, 105, 0.85));
+  }
+}
+
+/* Floating Luminous Motes */
+@keyframes floatMote {
+  0% {
+    transform: translateY(0) scale(0.8);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.8;
+  }
+  80% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-90px) scale(1.2);
+    opacity: 0;
+  }
+}
+
+.ambient-mote {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #F8DFAB;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(1px);
+}
+
+.mote-1 { left: 25%; bottom: 40%; animation: floatMote 4s infinite 0.5s ease-in-out; }
+.mote-2 { left: 45%; bottom: 35%; animation: floatMote 5s infinite 1.2s ease-in-out; }
+.mote-3 { left: 65%; bottom: 42%; animation: floatMote 4.5s infinite 2s ease-in-out; }
+.mote-4 { left: 80%; bottom: 38%; animation: floatMote 3.8s infinite 0.8s ease-in-out; }
+
+/* Interactive Interactive Lamp Module in Hero */
+.interactive-lamp-stage {
+  position: relative;
+  background: radial-gradient(circle at 50% 40%, var(--stage-glow, #3D3328) 0%, #171513 85%);
+  border-radius: var(--radius-md);
+  padding: 3rem 2rem 2.5rem;
+  border: 1px solid rgba(197, 160, 89, 0.35);
+  box-shadow: 0 35px 70px rgba(0,0,0,0.55);
+  transition: background 0.5s ease, border-color 0.5s ease;
+  overflow: hidden;
+}
+
+.lamp-fixture {
+  position: relative;
+  width: 240px;
+  height: 310px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.lamp-shade {
+  width: 170px;
+  height: 64px;
+  background: linear-gradient(180deg, #D4AF37 0%, #C5A059 60%, #9B7834 100%);
+  border-radius: 40px 40px 4px 4px;
+  position: relative;
+  z-index: 3;
+  transition: var(--transition-smooth);
+}
+
+.lamp-shade.lit {
+  background: linear-gradient(180deg, #FFF4D9 0%, #F5C66C 60%, #D49D34 100%);
+  animation: ambientPulse 4s infinite ease-in-out;
+}
+
+.lamp-light-cone {
+  position: absolute;
+  top: 90px;
+  width: 260px;
+  height: 180px;
+  background: radial-gradient(ellipse at 50% 0%, rgba(247, 212, 138, var(--cone-opacity, 0.35)) 0%, transparent 75%);
+  pointer-events: none;
+  z-index: 2;
+  transition: opacity 0.4s ease;
+}
+
+.lamp-stem {
+  width: 26px;
+  height: 175px;
+  background: linear-gradient(to right, #4A2B14, #8B5A2B 40%, #A76D38 60%, #4A2B14);
+  border-radius: 4px;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.5), 0 6px 15px rgba(0,0,0,0.4);
+  position: relative;
+  z-index: 3;
+}
+
+/* Stitched Leather Seam */
+.lamp-stem::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  left: 3px;
+  width: 1px;
+  border-left: 2px dashed #D4AF37;
+  opacity: 0.85;
+}
+
+.lamp-stem::after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  right: 3px;
+  width: 1px;
+  border-right: 2px dashed #D4AF37;
+  opacity: 0.85;
+}
+
+.lamp-base {
+  width: 120px;
+  height: 20px;
+  background: linear-gradient(180deg, #E2CA8E 0%, #C5A059 50%, #886C32 100%);
+  border-radius: 4px;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.6);
+  z-index: 3;
+}
+
+/* Interactive Dimmer Controls */
+.lamp-controller-bar {
+  margin-top: 2rem;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(197, 160, 89, 0.3);
+  border-radius: 30px;
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.dimmer-toggle-btn {
+  background: var(--color-gold);
+  color: #141312;
+  border: none;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.45rem 0.9rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.dimmer-toggle-btn:hover {
+  background: #FFF;
+}
+
+.dimmer-slider-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-grow: 1;
+}
+
+.dimmer-slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.2);
+  outline: none;
+  cursor: pointer;
+}
+
+.dimmer-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--color-gold);
+  box-shadow: 0 0 10px rgba(197, 160, 89, 0.8);
+  cursor: pointer;
+  border: 2px solid #FFF;
+}
+
+/* Ambiance Switcher Pills */
+.ambiance-switch {
+  display: inline-flex;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(197, 160, 89, 0.35);
+  border-radius: 24px;
+  padding: 3px;
+  margin-bottom: 1.5rem;
+}
+
+.ambiance-btn {
+  background: none;
+  border: none;
+  color: #B5AD9E;
+  padding: 0.4rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.ambiance-btn.active {
+  background: var(--color-gold);
+  color: #141312;
+  box-shadow: 0 2px 10px rgba(197, 160, 89, 0.3);
+}
+
+/* Interactive Macro Loupe */
+.loupe-inspect-card {
+  position: relative;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  cursor: crosshair;
+}
+
+.loupe-target {
+  transition: transform 0.3s ease;
+}
+
+.loupe-inspect-card:hover .loupe-target {
+  transform: scale(1.08);
+}
