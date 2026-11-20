@@ -6,13 +6,6 @@
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 4rem; align-items: center;">
       <div style="max-width: 620px;">
         
-        <!-- Ambiance Mode Switcher -->
-        <div class="ambiance-switch">
-          <button type="button" class="ambiance-btn" data-mode="day">☀️ Studio Day</button>
-          <button type="button" class="ambiance-btn active" data-mode="twilight">🌇 Twilight</button>
-          <button type="button" class="ambiance-btn" data-mode="midnight">🌙 Midnight</button>
-        </div>
-
         <span class="eyebrow" style="color: var(--color-gold); display: block;">{{ section.settings.eyebrow }}</span>
         
         <h1 class="font-serif" style="color: #FFFFFF; margin-bottom: 1.5rem; text-wrap: balance;">
@@ -42,7 +35,7 @@
           <div style="width: 1px; height: 35px; background: rgba(255,255,255,0.15);"></div>
           <div>
             <span style="display: block; font-family: var(--font-heading); font-size: 1.75rem; color: #FFFFFF; font-weight: 600;">UK & USA</span>
-            <span style="font-size: 0.75rem; color: #A0998E; text-transform: uppercase; letter-spacing: 0.1em;">Dual Electrics Standard</span>
+            <span style="font-size: 0.75rem; color: #A0998E; text-transform: uppercase; letter-spacing: 0.1em;">Dual Electrics</span>
           </div>
           <div style="width: 1px; height: 35px; background: rgba(255,255,255,0.15);"></div>
           <div>
@@ -52,43 +45,27 @@
         </div>
       </div>
 
-      <!-- Interactive Illuminated Lamp Stage -->
+      <!-- Clean Architectural Lamp Stage (Fixed 15% Studio Lighting) -->
       <div style="position: relative;">
-        <div class="interactive-lamp-stage">
+        <div class="interactive-lamp-stage" style="padding: 3.5rem 2.5rem;">
           <!-- Floating Ambient Motes -->
           <div class="ambient-mote mote-1"></div>
           <div class="ambient-mote mote-2"></div>
           <div class="ambient-mote mote-3"></div>
-          <div class="ambient-mote mote-4"></div>
 
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; position: relative; z-index: 5;">
-            <span class="badge-gold">Live Lighting Simulation</span>
-            <span id="dimmer-status-label" style="font-size: 0.75rem; color: var(--color-gold); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;">
-              75% • 2700K Amber Glow
-            </span>
+          <div style="text-align: right; margin-bottom: 1.5rem; position: relative; z-index: 5;">
+            <span class="badge-gold">Studio Day • 15% Ambient Radiance</span>
           </div>
 
-          <!-- Realistic Layered Lamp Structure -->
+          <!-- Layered Lamp Structure with Subtle 15% Illumination -->
           <div class="lamp-fixture">
-            <div class="lamp-shade lit"></div>
-            <div class="lamp-light-cone"></div>
+            <div class="lamp-shade lamp-shade--subtle"></div>
+            <div class="lamp-light-cone lamp-light-cone--subtle"></div>
             <div class="lamp-stem"></div>
             <div class="lamp-base"></div>
           </div>
 
-          <!-- Interactive Brass Dimmer Controller -->
-          <div class="lamp-controller-bar">
-            <button type="button" id="dimmer-toggle" class="dimmer-toggle-btn">
-              Extinguish
-            </button>
-            <div class="dimmer-slider-wrap">
-              <span style="font-size: 0.7rem; color: #A39B8F; text-transform: uppercase;">Dim</span>
-              <input type="range" id="lamp-dimmer-slider" class="dimmer-slider" min="0" max="100" value="75">
-              <span style="font-size: 0.7rem; color: #A39B8F; text-transform: uppercase;">Bright</span>
-            </div>
-          </div>
-
-          <div style="margin-top: 1.5rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem;">
+          <div style="margin-top: 2rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.25rem;">
             <h3 class="font-serif" style="color: #FFFFFF; font-size: 1.35rem;">The Kensington Saddle Table Lamp</h3>
             <p style="color: var(--color-gold); font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; margin-top: 0.25rem;">
               Vegetable-Tanned Tuscan Leather • Solid Turn-Cast Brass
